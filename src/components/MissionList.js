@@ -24,6 +24,7 @@ const MissionList = () => {
         <span>Rocket Type</span>
         <span>Launch Year</span>
       </div>
+      {loading && <div className="mission-list-loading">Loading...</div>}
       {data && <ul className="mission-list">{data && renderMissions()}</ul>}
       {error && <div className="mission-list-error">There was an error</div>}
     </div>

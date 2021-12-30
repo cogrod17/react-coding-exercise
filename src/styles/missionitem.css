@@ -7,42 +7,11 @@
   font-family: "Roboto";
 }
 
-/* .mission-item > p {
-  display: grid;
-  place-items: center;
-  background: orange;
-  border-radius: 10px;
-  margin: 1%;
-  padding: 5% 1%;
-} */
-
 .mission-item > p {
   display: grid;
   place-items: center;
-  height: 70px;
+  height: 60px;
   align-content: center;
   border-radius: 14px;
   background-color: #fdf2dd;
-}
-
-#mission-name {
-  /* width: 40%; */
-  /* margin: 0 4px 0 0; */
-  /* padding: 26.7px 244.5px 23.3px 16.5px; */
-  object-fit: contain;
-}
-
-#rocket-name {
-  /* width: 272px; */
-  /* margin: 0 4px; */
-  /* padding: 26.7px 244.5px 23.3px 16.5px; */
-  object-fit: contain;
-}
-
-#rocket-type {
-  /* margin: 0 4px; */
-}
-
-#launch-year {
-  /* margin: 0 0 0 4px; */
 }

@@ -1,19 +1,18 @@
 .mission-list-wrap {
   position: relative;
   height: 80%;
-  margin-left: 29%;
-  margin-right: 1%;
-  width: 70%;
+  align-self: flex-end;
+  width: 75%;
   overflow: auto;
-  padding-bottom: 5%;
 }
 
 .mission-list-head {
+  width: 100%;
   /* position: fixed; */
-  /* width: 70%; */
   display: grid;
-  grid-template-columns: 40% 29% 17% 14%;
+  grid-template-columns: 40% 30% 17% 14%;
   border-bottom: #193247 solid 1px;
+  background: #f4ddb5;
 }
 
 .mission-list-head > span {
@@ -27,4 +26,9 @@
   letter-spacing: normal;
   text-align: left;
   color: #193247;
+}
+
+.mission-list {
+  height: 100%;
+  overflow: auto;
 }
