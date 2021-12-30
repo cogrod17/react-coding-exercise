@@ -18,6 +18,12 @@ const MissionList = () => {
 
   return (
     <div className="mission-list-wrap">
+      <div className="mission-list-head">
+        <span>Mission Name</span>
+        <span>Rocket Name</span>
+        <span>Rocket Type</span>
+        <span>Launch Year</span>
+      </div>
       {data && <ul className="mission-list">{data && renderMissions()}</ul>}
       {error && <div className="mission-list-error">There was an error</div>}
     </div>

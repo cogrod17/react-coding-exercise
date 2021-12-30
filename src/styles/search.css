@@ -1,0 +1,17 @@
+#search {
+  position: relative;
+  margin-left: 29%;
+  margin-right: 1%;
+  padding-top: 10px;
+  width: 70%;
+  height: 20%;
+}
+
+#title {
+  align-content: center;
+  height: 100%;
+  width: 50%;
+  background-image: url("../images/Group\ 206.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
