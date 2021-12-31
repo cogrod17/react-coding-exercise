@@ -15,6 +15,11 @@
   align-content: center;
   border-radius: 14px;
   background-color: #fdf2dd;
+  cursor: pointer;
+}
+
+.mission-item:hover > p {
+  background-color: #d14b39;
 }
 
 .paginate-btn {
