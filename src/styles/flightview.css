@@ -1,0 +1,30 @@
+.flight-ticket-wrap {
+  width: 80;
+  height: 100%;
+}
+
+.flight-ticket {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: red solid 1px;
+  position: relative;
+  height: 80%;
+  min-height: 500px;
+  width: 90%;
+  margin: 0 auto;
+  background-image: url(../images/Group\ 168.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.ticket-info {
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+  border: red solid 1px;
+}
+
+/* #launch-year-ticket {
+} */

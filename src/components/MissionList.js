@@ -51,7 +51,7 @@ const MissionList = () => {
   };
 
   return (
-    <>
+    <div id="app-wrap-list">
       <Search setMissionName={setMissionName} />
       <div className="mission-list-wrap">
         <div className="mission-list-head">
@@ -79,7 +79,7 @@ const MissionList = () => {
         )}
         {error && <div className="mission-list-error">There was an error</div>}
       </div>
-    </>
+    </div>
   );
 };
 
