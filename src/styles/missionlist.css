@@ -1,22 +1,24 @@
 .mission-list-wrap {
   position: relative;
-  height: 80%;
   align-self: flex-end;
   width: 75%;
-  overflow: auto;
+  max-height: 80%;
 }
 
 .mission-list-head {
   width: 100%;
-  /* position: fixed; */
   display: grid;
-  grid-template-columns: 40% 30% 17% 14%;
+  grid-template-columns: 40% 30% 15% 15%;
   border-bottom: #193247 solid 1px;
   background: #f4ddb5;
 }
 
 .mission-list-head > span {
   padding: 1% 3%;
+
+  display: flex;
+  /* justify-items: space-evenly; */
+
   /* font-family: Goldman; */
   font-size: 17px;
   font-weight: bold;
@@ -26,9 +28,46 @@
   letter-spacing: normal;
   text-align: left;
   color: #193247;
+  cursor: pointer;
 }
 
-.mission-list {
+.mission-list,
+.mission-list-loading {
   height: 100%;
   overflow: auto;
+  /* padding-bottom: 5%; */
+}
+
+.active,
+.ascending,
+.descending {
+  position: relative;
+}
+
+.descending::after {
+  content: "↓";
+}
+
+.ascending::after {
+  content: "↑";
+}
+
+.ascending::after,
+.descending::after {
+  padding-left: 5px;
+  height: 100%;
+  width: 10%;
+  color: #193247;
+}
+
+.active::before {
+  content: "";
+  position: absolute;
+  bottom: -7%;
+  left: 0;
+  width: 100%;
+  height: 15%;
+  border-radius: 10px;
+  background: #193247;
+  /* border-bottom: #193247 solid 3px; */
 }

@@ -4,6 +4,7 @@
   grid-template-columns: 40% 29% 15% 14%;
   gap: 4px;
   margin-top: 4px;
+
   font-family: "Roboto";
 }
 
@@ -14,4 +15,14 @@
   align-content: center;
   border-radius: 14px;
   background-color: #fdf2dd;
+}
+
+.paginate-btn {
+  margin: 20px;
+  padding: 5px 10px;
+  color: #f4ddb5;
+  background-color: #d14b39;
+  border: none;
+  border-radius: 44px;
+  cursor: pointer;
 }

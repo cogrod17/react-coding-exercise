@@ -12,10 +12,10 @@
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  padding-top: 10px;
   width: 75%;
-  height: 17%;
-  margin-bottom: 3%;
+  max-height: 17%;
+  min-height: 17%;
+  padding-bottom: 3%;
 }
 
 #title {
@@ -35,18 +35,25 @@
 }
 
 #search > input {
-  background: #193247;
   border: none;
   color: #f4ddb5;
   padding: 2% 5%;
+  padding-left: 30px;
   border-radius: 44px;
   background-color: #193247;
+  background-image: url("../images/rocket.png");
+  background-repeat: no-repeat;
+  background-size: 25px 25px;
+  background-position: center;
+  background-position-x: 1%;
 }
 
 #search > button {
   background-color: #d14b39;
   border: none;
   border-radius: 44px;
+  cursor: pointer;
+  color: #f4ddb5;
 }
 
 input:focus {
