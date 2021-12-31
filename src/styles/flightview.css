@@ -1,30 +1,63 @@
 .flight-ticket-wrap {
+  position: relative;
   width: 80;
   height: 100%;
+  display: flex;
 }
 
 .flight-ticket {
+  border: red solid 1px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: red solid 1px;
   position: relative;
-  height: 80%;
-  min-height: 500px;
-  width: 90%;
+
+  min-width: 900px;
+
+  min-height: 400px;
+  max-height: 400px;
+
   margin: 0 auto;
   background-image: url(../images/Group\ 168.png);
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: center;
+  background-position: center top;
 }
 
 .ticket-info {
   display: flex;
   flex-direction: column;
   width: 15%;
-  border: red solid 1px;
 }
 
-/* #launch-year-ticket {
-} */
+#back-to-list-btn {
+  /* position: absolute;
+  top: 3%;
+  left: 3%; */
+  margin-top: 25px;
+  min-width: 50px;
+  min-height: 50px;
+  display: grid;
+  place-items: center;
+  background-image: url(../images/chevron-with-circle-right.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+
+#launch-year-ticket {
+  position: absolute;
+  right: 5%;
+  top: 20%;
+}
+
+#mission-name-ticket {
+  position: absolute;
+  top: 30%;
+  left: 20%;
+}
+
+#rocket-name-ticket {
+  position: absolute;
+  left: 20%;
+}
