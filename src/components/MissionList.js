@@ -1,21 +1,39 @@
 import React, { useState } from "react";
 import Mission from "./Mission";
+import Search from "./Search";
 import "../styles/missionlist.css";
 import { getLaunchesPast } from "../api";
 import { useQuery } from "@apollo/react-hooks";
 
+let keys = {
+  "Mission Name": "mission_name",
+  "Rocket Name": "rocket_name",
+  "Rocket Type": "rocket_type",
+  "Launch Year": "launch_year",
+};
+
 const MissionList = () => {
   const [category, setCategory] = useState("Launch Year");
   const [ascending, setAscending] = useState(false);
-  const [page, setPage] = useState(10);
-  const { loading, data, error } = useQuery(
-    getLaunchesPast(ascending, category, page)
-  );
+  const [offset, setOffset] = useState(0);
+  const [mission_name, setMissionName] = useState(null);
+  const { loading, data, error, fetchMore } = useQuery(getLaunchesPast, {
+    variables: {
+      order: ascending ? "asc" : "desc",
+      sort: keys[category],
+      mission_name,
+      offset,
+      limit: 10,
+    },
+  });
 
-  const paginate = () => {
-    setPage(page + 10);
+  const onLoadMore = () => {
+    setOffset(offset + 10);
+    fetchMore({ variables: { offset, limit: 10 } });
   };
+
   const changeSort = (e) => {
+    setOffset(0);
     let click = e.target.innerHTML;
     if (category !== click) setCategory(click);
     if (category === click) setAscending(!ascending);
@@ -33,30 +51,35 @@ const MissionList = () => {
   };
 
   return (
-    <div className="mission-list-wrap">
-      <div className="mission-list-head">
-        <span className={setClass("Mission Name")} onClick={changeSort}>
-          Mission Name
-        </span>
-        <span className={setClass("Rocket Name")} onClick={changeSort}>
-          Rocket Name
-        </span>
-        <span className={setClass("Rocket Type")} onClick={changeSort}>
-          Rocket Type
-        </span>
-        <span className={setClass("Launch Year")} onClick={changeSort}>
-          Launch Year
-        </span>
+    <>
+      <Search setMissionName={setMissionName} />
+      <div className="mission-list-wrap">
+        <div className="mission-list-head">
+          <span className={setClass("Mission Name")} onClick={changeSort}>
+            Mission Name
+          </span>
+          <span className={setClass("Rocket Name")} onClick={changeSort}>
+            Rocket Name
+          </span>
+          <span className={setClass("Rocket Type")} onClick={changeSort}>
+            Rocket Type
+          </span>
+          <span className={setClass("Launch Year")} onClick={changeSort}>
+            Launch Year
+          </span>
+        </div>
+        {loading && <div className="mission-list-loading">Loading...</div>}
+        {data && (
+          <ul className="mission-list">
+            {data && renderMissions()}
+            <button onClick={onLoadMore} className="paginate-btn">
+              Load more
+            </button>
+          </ul>
+        )}
+        {error && <div className="mission-list-error">There was an error</div>}
       </div>
-      {loading && <div className="mission-list-loading">Loading...</div>}
-      {data && (
-        <ul className="mission-list">
-          {data && renderMissions()}
-          <button className="paginate-btn">Load more</button>
-        </ul>
-      )}
-      {error && <div className="mission-list-error">There was an error</div>}
-    </div>
+    </>
   );
 };
 
