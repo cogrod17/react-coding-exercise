@@ -1,7 +1,9 @@
 .mission-list-wrap {
   position: relative;
   align-self: flex-end;
+
   width: 75%;
+  padding-right: 2%;
   max-height: 80%;
 }
 
@@ -34,8 +36,6 @@
 .mission-list,
 .mission-list-loading {
   height: 100%;
-  overflow: auto;
-  /* padding-bottom: 5%; */
 }
 
 .active,
@@ -70,4 +70,29 @@
   border-radius: 10px;
   background: #193247;
   /* border-bottom: #193247 solid 3px; */
+}
+
+.loader-wrap {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 400px;
+  width: 100%;
+}
+.loader {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: #193247 solid 4px;
+  border-top: transparent solid 4px;
+  animation: spin infinite linear 1s;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

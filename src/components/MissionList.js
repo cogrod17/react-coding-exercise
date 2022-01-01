@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Mission from "./Mission";
 import Search from "./Search";
+import Loader from "./Loader";
 import "../styles/missionlist.css";
 import { getLaunchesPast } from "../api";
 import { useQuery } from "@apollo/react-hooks";
@@ -23,13 +24,13 @@ const MissionList = ({ viewFlight }) => {
       sort: keys[category],
       mission_name,
       offset,
-      limit: 10,
+      limit: 6,
     },
   });
 
   const onLoadMore = () => {
-    setOffset(offset + 10);
-    fetchMore({ variables: { offset, limit: 10 } });
+    setOffset(offset + 6);
+    fetchMore({ variables: { offset, limit: 6 } });
   };
 
   const changeSort = (e) => {
@@ -68,7 +69,7 @@ const MissionList = ({ viewFlight }) => {
             Launch Year
           </span>
         </div>
-        {loading && <div className="mission-list-loading">Loading...</div>}
+        {loading && <Loader />}
         {data && (
           <ul className="mission-list">
             {data && renderMissions()}
@@ -84,20 +85,3 @@ const MissionList = ({ viewFlight }) => {
 };
 
 export default MissionList;
-
-/*
-const getProperty = (obj, property) => {
-  return property === "launch_year" || property === "mission_name"
-    ? obj[property]
-    : obj.rocket[property];
-};
-console.log(data);
-  function comparator(a, b) {
-    const valA = getProperty(a, keys[category]);
-    const valB = getProperty(b, keys[category]);
-
-    if (valA < valB) return ascending ? -1 : 1;
-    if (valA > valB) return ascending ? 1 : -1;
-    return 0;
-  }
-*/

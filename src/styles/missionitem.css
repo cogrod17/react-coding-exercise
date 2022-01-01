@@ -1,25 +1,41 @@
 .mission-item {
-  /* border: blue solid 1px; */
+  position: relative;
   display: grid;
   grid-template-columns: 40% 29% 15% 14%;
   gap: 4px;
   margin-top: 4px;
-
   font-family: "Roboto";
 }
 
 .mission-item > p {
   display: grid;
   place-items: center;
-  height: 60px;
+  height: 65px;
   align-content: center;
   border-radius: 14px;
   background-color: #fdf2dd;
   cursor: pointer;
+  color: #606060;
+  font-weight: bolder;
 }
 
 .mission-item:hover > p {
   background-color: #d14b39;
+  color: #ffffff;
+}
+
+.mission-item:hover::after {
+  position: absolute;
+  right: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  content: "";
+  height: 30px;
+  width: 30px;
+  background-image: url("../images/chevron-with-circle-right@3x.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
 }
 
 .paginate-btn {

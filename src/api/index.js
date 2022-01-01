@@ -15,7 +15,7 @@ export const getLaunchesPast = gql`
       sort: $sort
       offset: $offset
       find: { mission_name: $mission_name }
-      limit: 10
+      limit: 6
     ) {
       mission_name
       rocket {
