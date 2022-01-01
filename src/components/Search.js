@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import "../styles/search.css";
 
-const Search = ({ setMissionName }) => {
+const Search = ({ setMissionName, setOffset }) => {
   const [term, setTerm] = useState("");
 
   const onType = (e) => setTerm(e.target.value);
 
   const onSearch = (e) => {
     e.preventDefault();
+    setOffset(0);
     setMissionName(term);
     setTerm("");
   };

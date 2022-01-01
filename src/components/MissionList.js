@@ -53,7 +53,7 @@ const MissionList = ({ viewFlight }) => {
 
   return (
     <div id="app-wrap-list">
-      <Search setMissionName={setMissionName} />
+      <Search setMissionName={setMissionName} setOffset={setOffset} />
       <div className="mission-list-wrap">
         <div className="mission-list-head">
           <span className={setClass("Mission Name")} onClick={changeSort}>
