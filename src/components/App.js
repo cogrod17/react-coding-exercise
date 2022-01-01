@@ -9,7 +9,9 @@ const App = () => {
   return (
     <>
       {!activeFlight && <MissionList viewFlight={setActiveFlight} />}
-      {activeFlight && <FlightView back={setActiveFlight} />}
+      {activeFlight && (
+        <FlightView mission={activeFlight} back={setActiveFlight} />
+      )}
     </>
   );
 };

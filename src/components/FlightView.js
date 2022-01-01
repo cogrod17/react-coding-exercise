@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/flightview.css";
 
-const FlightView = ({ back }) => {
+const FlightView = ({ mission, back }) => {
   const backToList = () => back(null);
 
   return (
@@ -11,19 +11,19 @@ const FlightView = ({ back }) => {
         <div className="flight-ticket">
           <div id="mission-name-ticket" className="ticket-info">
             <span>Mission Name</span>
-            <span>2017</span>
+            <span id="name-big">{mission.mission_name}</span>
           </div>
           <div id="rocket-name-ticket" className="ticket-info">
             <span>Rocket Name</span>
-            <span>2017</span>
+            <span>{mission.rocket.rocket_name}</span>
           </div>
-          <div id="rcoket-type-ticket" className="ticket-info">
+          <div id="rocket-type-ticket" className="ticket-info">
             <span>Rocket Type</span>
-            <span>2017</span>
+            <span>{mission.rocket.rocket_type}</span>
           </div>
           <div id="launch-year-ticket" className="ticket-info">
             <span>Launch Year</span>
-            <span>2017</span>
+            <span>{mission.launch_year}</span>
           </div>
         </div>
       </div>

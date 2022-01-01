@@ -7,7 +7,7 @@ const Mission = ({ mission, viewFlight }) => {
   const view = () => viewFlight(mission);
 
   return (
-    <li onClick={viewFlight} className="mission-item">
+    <li onClick={view} className="mission-item">
       <p id="mission-name">{mission_name}</p>
       <p id="rocket-name">{rocket.rocket_name}</p>
       <p id="rocket-type">{rocket.rocket_type}</p>
