@@ -1,11 +1,13 @@
 import React from "react";
 import "../styles/missionitem.css";
 
-const Mission = ({ mission }) => {
+const Mission = ({ mission, viewFlight }) => {
   const { mission_name, rocket, launch_year } = mission;
 
+  const view = () => viewFlight(mission);
+
   return (
-    <li className="mission-item">
+    <li onClick={viewFlight} className="mission-item">
       <p id="mission-name">{mission_name}</p>
       <p id="rocket-name">{rocket.rocket_name}</p>
       <p id="rocket-type">{rocket.rocket_type}</p>

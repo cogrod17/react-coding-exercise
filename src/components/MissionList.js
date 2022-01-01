@@ -12,7 +12,7 @@ let keys = {
   "Launch Year": "launch_year",
 };
 
-const MissionList = () => {
+const MissionList = ({ viewFlight }) => {
   const [category, setCategory] = useState("Launch Year");
   const [ascending, setAscending] = useState(false);
   const [offset, setOffset] = useState(0);
@@ -41,7 +41,7 @@ const MissionList = () => {
 
   const renderMissions = () => {
     return data.launchesPast.map((mission, i) => {
-      return <Mission mission={mission} key={i} />;
+      return <Mission mission={mission} viewFlight={viewFlight} key={i} />;
     });
   };
 

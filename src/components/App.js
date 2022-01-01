@@ -4,12 +4,12 @@ import MissionList from "./MissionList";
 import "../styles/app.css";
 
 const App = () => {
-  const [activeFlight, setActiveFlight] = useState(true);
+  const [activeFlight, setActiveFlight] = useState(null);
 
   return (
     <>
-      {!activeFlight && <MissionList />}
-      {activeFlight && <FlightView />}
+      {!activeFlight && <MissionList viewFlight={setActiveFlight} />}
+      {activeFlight && <FlightView back={setActiveFlight} />}
     </>
   );
 };
